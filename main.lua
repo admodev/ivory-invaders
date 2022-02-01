@@ -6,7 +6,11 @@ function love.load(arg)
 end
 
 function love.update(dt)
-
+    if love.keyboard.isDown('left') then
+        player.x = player.x - (player.speed *dt)
+    elseif love.keyboard.isDown('right') then
+        player.x = player.x + (player.speed *dt)
+    end
 end
 
 function love.draw(dt)
